@@ -24,9 +24,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import portraitAsset from "@/assets/farid-abdel-nasser.jpg.asset.json";
-import logoMonogram from "@/assets/farid-monogram.png.asset.json";
-import logoFull from "@/assets/farid-logo.jpeg.asset.json";
+const portraitSrc = "/farid-abdel-nasser.jpg";
+const logoMonogramSrc = "/farid-monogram.png";
 import { projects, categories, type Project, type ProjectImage } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
@@ -125,7 +124,7 @@ function Portfolio() {
       <header className="fixed inset-x-0 top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur-xl">
         <div className="page-shell flex h-20 items-center justify-between">
           <button className="group flex items-center gap-3" onClick={() => scrollToSection("home")} aria-label="Back to top">
-            <img src={logoMonogram.url} alt="Farid Architect logo" className="size-10 border border-primary/50 object-cover" width={44} height={44} />
+            <img src={logoMonogramSrc} alt="Farid Architect logo" className="size-10 border border-primary/50 object-cover" width={44} height={44} />
             <span className="hidden text-left sm:block">
               <span className="block text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-foreground">Farid Abdel Nasser</span>
               <span className="block text-[0.62rem] uppercase tracking-[0.15em] text-muted-foreground">Senior Architect & Finishing</span>
@@ -179,7 +178,7 @@ function Portfolio() {
             <div className="portrait-frame relative">
               <div className="absolute -left-5 top-10 hidden h-[70%] w-px bg-primary/55 sm:block" />
               <div className="absolute -left-8 top-10 hidden h-px w-6 bg-primary/55 sm:block" />
-              <img src={portraitAsset.url} alt="Farid Abdel Nasser, Senior Architect & Finishing" className="aspect-[4/5] w-full object-cover object-[50%_28%] grayscale-[18%]" width={768} height={1664} fetchPriority="high" />
+              <img src={portraitSrc} alt="Farid Abdel Nasser, Senior Architect & Finishing" className="aspect-[4/5] w-full object-cover object-[50%_28%] grayscale-[18%]" width={768} height={1664} fetchPriority="high" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-portrait-caption px-5 py-4 sm:px-7">
                 <span className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">Precision in every detail</span>
                 <span className="font-display text-3xl text-primary">10+</span>
@@ -303,7 +302,7 @@ function Portfolio() {
         </div>
       </section>
 
-      <footer className="border-t border-border py-7"><div className="page-shell flex flex-col items-center gap-5 text-xs text-muted-foreground sm:flex-row sm:justify-between"><div className="flex items-center gap-3"><img src={logoMonogram.url} alt="Farid Architect logo" className="size-11 border border-primary/50 object-cover" width={44} height={44} loading="lazy" /><p>© 2026 Farid Abdel Nasser. All rights reserved.</p></div><p className="uppercase tracking-[0.15em]">Precision · Quality · Delivery</p></div></footer>
+      <footer className="border-t border-border py-7"><div className="page-shell flex flex-col items-center gap-5 text-xs text-muted-foreground sm:flex-row sm:justify-between"><div className="flex items-center gap-3"><img src={logoMonogramSrc} alt="Farid Architect logo" className="size-11 border border-primary/50 object-cover" width={44} height={44} loading="lazy" /><p>© 2026 Farid Abdel Nasser. All rights reserved.</p></div><p className="uppercase tracking-[0.15em]">Precision · Quality · Delivery</p></div></footer>
 
       {modal && <ProjectModal project={modal.project} gallery={modal.gallery} onClose={() => setModal(null)} />}
     </main>

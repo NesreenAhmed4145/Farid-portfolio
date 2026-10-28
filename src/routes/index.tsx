@@ -148,6 +148,7 @@ function Portfolio() {
               <button key={item} className="py-3 text-left text-sm uppercase tracking-[0.15em] text-muted-foreground" onClick={() => { scrollToSection(item); setMobileOpen(false); }}>{item}</button>
             ))}
           </nav>
+
         )}
       </header>
 
@@ -282,7 +283,7 @@ function Portfolio() {
             </div>
             <div className="border border-border bg-surface p-6 sm:p-9">
               <div className="flex items-center justify-between border-b border-border pb-5"><div><p className="eyebrow"><span /> Project inquiry</p><h3 className="mt-2 font-display text-2xl text-stone-light">Tell me about your project</h3></div><span className="hidden text-xs text-muted-foreground sm:block">Typically replies within 24h</span></div>
-              <form name="contact" method="POST" data-netlify="true" className="mt-7 grid gap-5" action="/?submitted=true#contact">
+              <form name="contact" method="POST" data-netlify="true" className="mt-7 grid gap-5"   action="/__forms.html">
                 <input type="hidden" name="form-name" value="contact" />
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field label="Name" htmlFor="name"><Input id="name" name="name" required minLength={2} maxLength={100} autoComplete="name" placeholder="Your full name" /></Field>

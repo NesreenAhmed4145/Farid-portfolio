@@ -283,21 +283,23 @@ function Portfolio() {
             </div>
             <div className="border border-border bg-surface p-6 sm:p-9">
               <div className="flex items-center justify-between border-b border-border pb-5"><div><p className="eyebrow"><span /> Project inquiry</p><h3 className="mt-2 font-display text-2xl text-stone-light">Tell me about your project</h3></div><span className="hidden text-xs text-muted-foreground sm:block">Typically replies within 24h</span></div>
-              <form name="contact" method="POST" data-netlify="true" className="mt-7 grid gap-5"  action="/thanks.html" netlify>
-                <input type="hidden" name="form-name" value="contact" />
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <Field label="Name" htmlFor="name"><Input id="name" name="name" required minLength={2} maxLength={100} autoComplete="name" placeholder="Your full name" /></Field>
-                  <Field label="Email" htmlFor="email"><Input id="email" name="email" type="email" required maxLength={255} autoComplete="email" placeholder="you@email.com" /></Field>
-                  <Field label="Phone / WhatsApp" htmlFor="phone"><Input id="phone" name="phone" type="tel" required minLength={8} maxLength={20} pattern="[+0-9()\- ]{8,20}" autoComplete="tel" placeholder="+20" /></Field>
-                  <Field label="Project Type" htmlFor="project-type">
-                    <select id="project-type" name="projectType" required defaultValue="" className="form-select">
-                      <option value="" disabled>Select project type</option><option>Villa</option><option>Apartment</option><option>Commercial</option><option>Office</option>
-                    </select>
-                  </Field>
-                </div>
-                <Field label="Message" htmlFor="message"><Textarea id="message" name="message" required minLength={10} maxLength={1500} rows={6} placeholder="Scope, location, area, and target timeline..." /></Field>
-                <Button type="submit" size="lg" className="mt-1 w-full sm:w-auto sm:justify-self-start">Send Inquiry <Send /></Button>
-              </form>
+             <form action="https://api.web3forms.com/submit" method="POST" className="mt-7 grid gap-5">
+  {/* الـ Access Key الخاص بكِ */}
+  <input type="hidden" name="access_key" value="a731489d-2c80-48ae-bd89-cecb0c4a6cfb" />
+  
+  <div className="grid gap-5 sm:grid-cols-2">
+    <Field label="Name" htmlFor="name"><Input id="name" name="name" required minLength={2} maxLength={100} autoComplete="name" placeholder="Your full name" /></Field>
+    <Field label="Email" htmlFor="email"><Input id="email" name="email" type="email" required maxLength={255} autoComplete="email" placeholder="you@email.com" /></Field>
+    <Field label="Phone / WhatsApp" htmlFor="phone"><Input id="phone" name="phone" type="tel" required minLength={8} maxLength={20} pattern="[+0-9()\- ]{8,20}" autoComplete="tel" placeholder="+20" /></Field>
+    <Field label="Project Type" htmlFor="project-type">
+      <select id="project-type" name="projectType" required defaultValue="" className="form-select">
+        <option value="" disabled>Select project type</option><option>Villa</option><option>Apartment</option><option>Commercial</option><option>Office</option>
+      </select>
+    </Field>
+  </div>
+  <Field label="Message" htmlFor="message"><Textarea id="message" name="message" required minLength={10} maxLength={1500} rows={6} placeholder="Scope, location, area, and target timeline..." /></Field>
+  <Button type="submit" size="lg" className="mt-1 w-full sm:w-auto sm:justify-self-start">Send Inquiry <Send /></Button>
+</form>
             </div>
           </div>
         </div>
